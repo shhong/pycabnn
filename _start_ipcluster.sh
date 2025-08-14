@@ -12,10 +12,6 @@ echo 'WORKDIR =' $SLURM_SUBMIT_DIR
 NENGS=$(($SLURM_NTASKS - 1))
 echo 'NENGS = ' $NENGS
 
-module load python/3.10.2
-module load openmpi.gcc
-alias python='python3'
-
 IPYTHONDIR=$SLURM_SUBMIT_DIR/$SLURM_JOB_ID.ipython #Create an ipython configuration directory
 echo $IPYTHONDIR
 mkdir -p $IPYTHONDIR
