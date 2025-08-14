@@ -1,22 +1,4 @@
-#!/usr/bin/bash
-
-#SBATCH --job-name=ipcluster
-#SBATCH --partition=compute
-#SBATCH --mem-per-cpu=8g
-#SBATCH --ntasks=81
-
-#SBATCH --mail-user=shhong@oist.jp
-#SBATCH --mail-type=FAIL
-
-#SBATCH --output=%j.out.log
-#SBATCH --error=%j.err.log
-
-# Here we activate pybrep with python 3.6 via anaconda
-# export PATH=/apps/unit/DeSchutterU/anaconda/bin:$PATH  # use anaconda for python
-# source activate pybrep
-
-# Could not install anything, so I cloned the environment.
-
+#SLURM SETTIINGS
 
 echo 'HOME =' $HOME
 echo 'PATH =' $PATH
@@ -36,6 +18,7 @@ alias python='python3'
 
 IPYTHONDIR=$SLURM_SUBMIT_DIR/$SLURM_JOB_ID.ipython #Create an ipython configuration directory
 echo $IPYTHONDIR
+mkdir -p $IPYTHONDIR
 
 ipython profile create --ipython-dir=$IPYTHONDIR
 ipcontroller --ip='*' --ipython-dir=$IPYTHONDIR &
