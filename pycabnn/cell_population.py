@@ -216,10 +216,10 @@ class Golgi_pop(Cell_pop):
 
         # special concatenation function for apical and basal dendrite
         # stack coords/segments of a and b dends when they are from the same cell
-        conc_ab_one = lambda i, a, b: np.vstack((a[a_idx == i], b[b_idx == i]))
+        conc_ab_one = lambda i, a, b: np.vstack([a[a_idx == i], b[b_idx == i]])
         # loop around all the cells
         conc_ab = lambda a, b: np.vstack(
-            (conc_ab_one(i, a, b) for i in range(self.n_cell))
+            [conc_ab_one(i, a, b) for i in range(self.n_cell)]
         )
 
         # concatenated dendrite information(coords, cell indices, segment information)
