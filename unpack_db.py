@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """Unpack the connectivity saved in *.db or *.h5 into text files
 
 Usage:

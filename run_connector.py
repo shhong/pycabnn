@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """run_connector.py
 
 Jobs = AAtoGoC, PFtoGoC, GoCtoGoC, GoCtoGoCgap, GlotoGrC
